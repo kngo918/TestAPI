@@ -1,23 +1,23 @@
 import requests
 import json
 
-#input: REST url
-#returns: touple: (REST response,[list of emails])
+
+# input: REST url
+# returns: tuple: (REST response,[list of emails])
 def get_all_user_email(url):
-    emaillist=[]
-    dict={}
+    emaillist = []
+    dict = {}
     response = requests.get(url)
-    #jsonresponse is a dict (json) output
+    # jsonresponse is a dict (json) output
     jsonresponse = json.loads(response.text)
 
-    #jsonresponse['data'] is a list of dictionaries
+    # condition that jsonresponse['data'] is a list of dictionaries
     if type(jsonresponse['data']) == type(emaillist):
-        print (f"Debug: {type(jsonresponse['data'])}")
         for record in jsonresponse['data']:
             emaillist.append(record['email'])
 
+    # condition that jsonresponse['data'] value is a string
     elif type(jsonresponse['data']) == type(dict):
-        #print (f"The type of jsonresponse['data']['email'] is {type(jsonresponse['data']['email'])}")
-        emaillist.append(jsonresponse['data']['email']) #returns a string
-    #print(emaillist)
-    return response,emaillist #returns a list
+        emaillist.append(jsonresponse['data']['email'])
+
+    return response, emaillist  # returns response,list
