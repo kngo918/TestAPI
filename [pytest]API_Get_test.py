@@ -15,3 +15,9 @@ def test_get_all_user_email():
     result = packages.GET.FetchUserData.get_all_user_email(baseurl + '/api/users/4')
     assert type(result[1]) == type(list)
 
+def test_expect_get_fail():
+    dict = {}
+
+    #tests to validate the functions return
+    result = packages.GET.FetchUserData.get_all_user_email(baseurl + '/api/users/4')
+    assert type(result[1]) == type(dict) #expect assertion failure
