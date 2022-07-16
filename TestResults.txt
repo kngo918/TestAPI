@@ -1,0 +1,9 @@
+============================= test session starts =============================
+platform win32 -- Python 3.9.7, pytest-7.1.2, pluggy-0.13.1
+rootdir: C:\Users\kngo9\PycharmProjects\TestAPI
+plugins: anyio-2.2.0
+collected 1 item
+
+[pytest]API_Get_test.py .                                                [100%]
+
+============================== 1 passed in 0.26s ==============================
