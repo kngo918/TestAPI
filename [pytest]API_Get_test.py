@@ -5,6 +5,8 @@ baseurl="https://reqres.in"
 
 '''
 Automated tests using pytest
+usage: In the .\TestAPI directory, run 'pytest' command to find
+        This will execute test_*, *_test files and functions named test_* or *_test 
 '''
 def test_get_all_user_email():
     list = []
