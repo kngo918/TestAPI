@@ -3,6 +3,9 @@ from packages.GET import FetchUserData
 #Server Host
 baseurl="https://reqres.in"
 
+'''
+Automated tests using pytest
+'''
 def test_get_all_user_email():
     list = []
 
