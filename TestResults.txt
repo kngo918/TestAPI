@@ -2,9 +2,9 @@
 platform win32 -- Python 3.9.7, pytest-7.1.2, pluggy-0.13.1
 rootdir: C:\Users\kngo9\PycharmProjects\TestAPI
 plugins: anyio-2.2.0
-collected 3 items
+collected 4 items
 
-[pytest]API_Get_test.py .F.                                              [100%]
+[pytest]API_Get_test.py .F..                                             [100%]
 
 ================================== FAILURES ===================================
 ____________________________ test_expect_get_fail _____________________________
@@ -21,4 +21,4 @@ E        +  and   <class 'type'> = type(dict)
 [pytest]API_Get_test.py:31: AssertionError
 =========================== short test summary info ===========================
 FAILED [pytest]API_Get_test.py::test_expect_get_fail - AssertionError: assert...
-========================= 1 failed, 2 passed in 1.26s =========================
+========================= 1 failed, 3 passed in 1.33s =========================

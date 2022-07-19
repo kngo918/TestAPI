@@ -38,3 +38,11 @@ def test_POST_functional():
     assert http_response.status_code == 201
     assert json_response['name'] == "Jon Doe"
     assert json_response['job'] == "QA"
+
+def test_PUT_functional():
+    request_json = json.loads('{"name":"Jonathan Doe","job":"QA Manager"}')
+    http_response = requests.post(baseurl + '/api/users/2',request_json)
+    json_response = json.loads(http_response.text)
+    assert http_response.status_code == 201
+    assert json_response['name'] == "Jonathan Doe"
+    assert json_response['job'] == "QA Manager"
