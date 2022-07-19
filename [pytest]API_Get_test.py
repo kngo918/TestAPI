@@ -40,6 +40,7 @@ def test_POST_functional():
     assert json_response['job'] == "QA"
 
 def test_PUT_functional():
+    #test cases for validate update of user details is accepted
     request_json = json.loads('{"name":"Jonathan Doe","job":"QA Manager"}')
     http_response = requests.post(baseurl + '/api/users/2',request_json)
     json_response = json.loads(http_response.text)
