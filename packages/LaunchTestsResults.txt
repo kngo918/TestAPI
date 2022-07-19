@@ -1,6 +1,16 @@
 C:\Users\kngo9\anaconda3\python.exe C:/Users/kngo9/PycharmProjects/TestAPI/packages/LaunchTests.py
+
+GET Methods Tests
 The response type of the API is: <class 'list'>
 (<Response [200]>, ['eve.holt@reqres.in'])
 (<Response [200]>, ['michael.lawson@reqres.in', 'lindsay.ferguson@reqres.in', 'tobias.funke@reqres.in', 'byron.fields@reqres.in', 'george.edwards@reqres.in', 'rachel.howell@reqres.in'])
+
+POST Methods Tests
+The HTTP Status is: <Response [201]>
+The HTTP Response is {'name': 'Jon Doe', 'job': 'QA', 'id': '322', 'createdAt': '2022-07-19T07:29:59.799Z'}
+
+PUT Methods Tests
+The HTTP Status is: <Response [200]>
+The HTTP Response is: {'name': 'Jonathan Doe', 'job': 'QA Manager', 'updatedAt': '2022-07-19T07:30:00.229Z'}
 
 Process finished with exit code 0
