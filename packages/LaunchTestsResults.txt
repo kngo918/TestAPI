@@ -1,0 +1,6 @@
+C:\Users\kngo9\anaconda3\python.exe C:/Users/kngo9/PycharmProjects/TestAPI/packages/LaunchTests.py
+The response type of the API is: <class 'list'>
+(<Response [200]>, ['eve.holt@reqres.in'])
+(<Response [200]>, ['michael.lawson@reqres.in', 'lindsay.ferguson@reqres.in', 'tobias.funke@reqres.in', 'byron.fields@reqres.in', 'george.edwards@reqres.in', 'rachel.howell@reqres.in'])
+
+Process finished with exit code 0

@@ -22,7 +22,10 @@ result=packages.GET.FetchUserData.get_all_user_email(baseurl+'/api/users?page=2'
 #Manual test to check response of the API call is a list of all email address
 print (f'The response type of the API is: {type(result[1])}')
 
-#Manual Test to check userid=4 returns first name, last name, id, email address
+#Manual Test to check userid=4 returns email address
 print(packages.GET.FetchUserData.get_all_user_email(baseurl+'/api/users/4'))
+
+#Manual Test to check all email addresses are returned.
+print (packages.GET.FetchUserData.get_all_user_email(baseurl + '/api/users?page=2'))
 
 
