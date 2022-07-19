@@ -1,5 +1,8 @@
 import packages.GET.FetchUserData
+import packages.POST.CreateUserData
 import json
+import requests
+
 from packages.GET import FetchUserData
 #Server Host
 baseurl="https://reqres.in"
@@ -9,7 +12,7 @@ Automated tests using pytest
 usage: In the .\TestAPI directory, run 'pytest' command to find
        test_*.py, *_test.py files and functions named test_* or *_test 
 '''
-def test_get_all_user_email():
+def test_GET_functional():
     list = []
 
     #tests to validate the functions return
@@ -17,15 +20,21 @@ def test_get_all_user_email():
     assert type(result[1]) == type(list)
     result = packages.GET.FetchUserData.get_all_user_email(baseurl + '/api/users/4')
     assert type(result[1]) == type(list)
+    http_response = requests.get(baseurl+'/api/users/5')
+    assert http_response.status_code == 200
+
 
 def test_expect_get_fail():
-    dict = {}
-
     #tests to validate the functions return
+    #We expect (e-fail) this test to fail the assertion and result in a test failure
     result = packages.GET.FetchUserData.get_all_user_email(baseurl + '/api/users/4')
     assert type(result[1]) == type(dict) #expect assertion failure
 
-def test_POST_positive():
+def test_POST_functional():
+    #test cases to validate a new user 'Jon Doe' with job 'QA' can be created
     request_json = json.loads('{"name":"Jon Doe","job":"QA"}')
-    result = packages.POST.CreateUserData.create_userdata((baseurl + '/api/users'), request_json)
-    assert 2>1
+    http_response = requests.post(baseurl + '/api/users',request_json)
+    json_response = json.loads(http_response.text)
+    assert http_response.status_code == 201
+    assert json_response['name'] == "Jon Doe"
+    assert json_response['job'] == "QA"
