@@ -1,5 +1,6 @@
+import json
 import packages.GET.FetchUserData
-from packages.GET import FetchUserData
+import packages.POST.CreateUserData
 #Server Host
 baseurl="https://reqres.in"
 
@@ -17,7 +18,9 @@ Expected Results:
 2) expect response 200 for valid endpoint and verify response for invalid IDs. 
 3) validate responses (200 series, 300 series, 400 series, 500 series)
 '''
-
+###############
+print('\nGET Methods Tests')
+###############
 result=packages.GET.FetchUserData.get_all_user_email(baseurl+'/api/users?page=2')
 #Manual test to check response of the API call is a list of all email address
 print (f'The response type of the API is: {type(result[1])}')
@@ -27,5 +30,18 @@ print(packages.GET.FetchUserData.get_all_user_email(baseurl+'/api/users/4'))
 
 #Manual Test to check all email addresses are returned.
 print (packages.GET.FetchUserData.get_all_user_email(baseurl + '/api/users?page=2'))
+
+###############
+print ('\nPOST Methods Tests')
+###############
+#Generate the json payload
+request_json = json.loads('{"name":"Jon Doe","job":"QA"}')
+result=packages.POST.CreateUserData.create_userdata((baseurl + '/api/users'), request_json)
+#Manual Test to verify HTTP Response == 201
+print (f'The HTTP Status is: {result[0]}')
+#Manual Test to verify server created a user (and display user id) and timestamp of the opperation
+print (f'The HTTP Response is {result[1]}')
+
+
 
 

@@ -1,4 +1,5 @@
 import packages.GET.FetchUserData
+import json
 from packages.GET import FetchUserData
 #Server Host
 baseurl="https://reqres.in"
@@ -23,3 +24,8 @@ def test_expect_get_fail():
     #tests to validate the functions return
     result = packages.GET.FetchUserData.get_all_user_email(baseurl + '/api/users/4')
     assert type(result[1]) == type(dict) #expect assertion failure
+
+def test_POST_positive():
+    request_json = json.loads('{"name":"Jon Doe","job":"QA"}')
+    result = packages.POST.CreateUserData.create_userdata((baseurl + '/api/users'), request_json)
+    assert 2>1
