@@ -1,6 +1,7 @@
 import json
 import packages.GET.FetchUserData
 import packages.POST.CreateUserData
+import packages.PUT.UpdateUserData
 #Server Host
 baseurl="https://reqres.in"
 
@@ -42,6 +43,12 @@ print (f'The HTTP Status is: {result[0]}')
 #Manual Test to verify server created a user (and display user id) and timestamp of the opperation
 print (f'The HTTP Response is {result[1]}')
 
-
-
+###############
+print ('\nPUT Methods Tests')
+###############
+#Generate the json payload
+request_json = json.loads('{"name":"Jonathan Doe","job":"QA Manager"}')
+result=packages.PUT.UpdateUserData.update_userdata(baseurl + '/api/users/2', request_json)
+print (f'The HTTP Status is: {result[0]}')
+print (f'The HTTP Response is: {result[1]}')
 
