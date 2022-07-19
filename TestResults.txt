@@ -19,12 +19,6 @@ E        +  where <class 'list'> = type(['eve.holt@reqres.in'])
 E        +  and   <class 'type'> = type(dict)
 
 [pytest]API_Get_test.py:31: AssertionError
-============================== warnings summary ===============================
-[pytest]API_Get_test.py:10
-  C:\Users\kngo9\PycharmProjects\TestAPI\[pytest]API_Get_test.py:10: DeprecationWarning: invalid escape sequence \T
-    '''
-
--- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 =========================== short test summary info ===========================
 FAILED [pytest]API_Get_test.py::test_expect_get_fail - AssertionError: assert...
-=================== 1 failed, 2 passed, 1 warning in 0.94s ====================
+========================= 1 failed, 2 passed in 1.26s =========================
