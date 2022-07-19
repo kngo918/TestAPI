@@ -2,8 +2,29 @@
 platform win32 -- Python 3.9.7, pytest-7.1.2, pluggy-0.13.1
 rootdir: C:\Users\kngo9\PycharmProjects\TestAPI
 plugins: anyio-2.2.0
-collected 1 item
+collected 3 items
 
-[pytest]API_Get_test.py .                                                [100%]
+[pytest]API_Get_test.py .F.                                              [100%]
 
-============================== 1 passed in 0.26s ==============================
+================================== FAILURES ===================================
+____________________________ test_expect_get_fail _____________________________
+
+    def test_expect_get_fail():
+        #tests to validate the functions return
+        #We expect (e-fail) this test to fail the assertion and result in a test failure
+        result = packages.GET.FetchUserData.get_all_user_email(baseurl + '/api/users/4')
+>       assert type(result[1]) == type(dict) #expect assertion failure
+E       AssertionError: assert <class 'list'> == <class 'type'>
+E        +  where <class 'list'> = type(['eve.holt@reqres.in'])
+E        +  and   <class 'type'> = type(dict)
+
+[pytest]API_Get_test.py:31: AssertionError
+============================== warnings summary ===============================
+[pytest]API_Get_test.py:10
+  C:\Users\kngo9\PycharmProjects\TestAPI\[pytest]API_Get_test.py:10: DeprecationWarning: invalid escape sequence \T
+    '''
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED [pytest]API_Get_test.py::test_expect_get_fail - AssertionError: assert...
+=================== 1 failed, 2 passed, 1 warning in 0.94s ====================
